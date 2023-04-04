@@ -857,7 +857,7 @@ int main(int argc, char** argv){
     
     int res = run_GA(mutation_rate, popsize, cur_clique_size, graph_size, adj, 50000, max_in_time, selection, crossover, mutation, temp_best);
     if(res > 0){
-      printf("Found solution for clique size %d\n\n", cur_clique_size);
+      printf("Found solution for clique size %d in %lu (s)\n\n", cur_clique_size, time(NULL) - start);
       free(best_genome->genes);
       free(best_genome->gene_mask);
       free(best_genome);
@@ -867,7 +867,6 @@ int main(int argc, char** argv){
       best = time(NULL);
     }
   }
-
 
   printf("Done getting genes...");
 
